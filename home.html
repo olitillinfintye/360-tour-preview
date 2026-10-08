@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>360 Tours (Preview)</title><link rel="icon" href="data:,">
+<style>
+:root{--fg:#eef3f7;--mut:#9fb0bf;--acc:#35c2b0}
+*{box-sizing:border-box}
+body{margin:0;min-height:100vh;background:#0b1118;color:var(--fg);font:15px/1.4 "Segoe UI",system-ui,sans-serif;padding:40px 24px}
+h1{margin:0 0 4px;font-size:28px} .sub{color:var(--mut);margin-bottom:28px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px;max-width:1000px}
+a.card{display:block;text-decoration:none;color:inherit;border-radius:16px;overflow:hidden;background:#141d28;border:1px solid rgba(255,255,255,.14);transition:transform .15s,border-color .15s}
+a.card:hover{transform:translateY(-4px);border-color:var(--acc)}
+a.card img{width:100%;aspect-ratio:2/1;object-fit:cover;display:block}
+.card div{padding:14px 16px}.card b{font-size:18px;display:block}.card span{color:var(--mut);font-size:13px}
+</style></head><body>
+<h1>360 VR Tours</h1><div class="sub">Preview: pick a tour. Each has its own menu, guided tour and editor.</div>
+<div class="grid" id="g"></div>
+<script>
+const T=[['dembi','tour.json','Dembi Resort',''],['wushwush','wushwush/tour.json','Wush Wush Tea Farm','wushwush/'],['bebeka','bebeka/tour.json','Bebeka Coffee Farm','bebeka/']];
+T.forEach(async([k,f,n,b])=>{const t=await (await fetch(f,{cache:'no-store'})).json();
+ const a=document.createElement('a');a.className='card';a.href='index.html?tour='+k;
+ a.innerHTML=`<img src="${b}thumbs/${t.start}.jpg" alt=""><div><b>${n}</b><span>${t.nodes.length} locations · ${t.zones.length} menu areas</span></div>`;
+ document.getElementById('g').appendChild(a);});
+</script></body></html>

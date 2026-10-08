@@ -1,0 +1,279 @@
+{
+ "title": "Bebeka Coffee Farm 360 Tour",
+ "base": "bebeka/",
+ "start": "b00",
+ "menu": {
+  "node": "b00",
+  "title": "Bebeka Coffee Farm",
+  "subtitle": "Choose an area to visit"
+ },
+ "zones": [
+  {
+   "id": "farm",
+   "name": "Coffee Farm",
+   "target": "b00",
+   "color": "#8c5a2b",
+   "nodes": [
+    "b00",
+    "b01",
+    "b02",
+    "b03",
+    "b04",
+    "b05",
+    "b06"
+   ]
+  },
+  {
+   "id": "drying",
+   "name": "Coffee Drying",
+   "target": "b07",
+   "color": "#e0a030",
+   "nodes": [
+    "b07",
+    "b08"
+   ]
+  },
+  {
+   "id": "processing",
+   "name": "Processing",
+   "target": "b09",
+   "color": "#b5483a",
+   "nodes": [
+    "b09"
+   ]
+  }
+ ],
+ "guided": [
+  "b00",
+  "b01",
+  "b02",
+  "b03",
+  "b04",
+  "b05",
+  "b06",
+  "b07",
+  "b08",
+  "b09"
+ ],
+ "guidedSeconds": 12,
+ "nodes": [
+  {
+   "id": "b00",
+   "file": "Bebeka - Coffee Farm 1.jpg",
+   "name": "Coffee Farm 1",
+   "zone": "farm",
+   "entryU": 0.5,
+   "hotspots": [
+    {
+     "type": "link",
+     "target": "b01",
+     "u": 0.58,
+     "v": 0.56
+    },
+    {
+     "type": "menu",
+     "u": 0.42,
+     "v": 0.46
+    },
+    {
+     "type": "info",
+     "u": 0.5,
+     "v": 0.46,
+     "title": "Welcome to Bebeka Coffee Farm",
+     "text": "Explore the coffee farm. Use the menu to jump to an area, or follow the arrows. This text is a placeholder."
+    },
+    {
+     "type": "image",
+     "u": 0.66,
+     "v": 0.46,
+     "title": "Bebeka Coffee Farm Map",
+     "image": "bebeka/map.png",
+     "text": "Overview of every area in this tour."
+    }
+   ]
+  },
+  {
+   "id": "b01",
+   "file": "Bebeka - Coffee Farm 2.jpg",
+   "name": "Coffee Farm 2",
+   "zone": "farm",
+   "entryU": 0.5,
+   "hotspots": [
+    {
+     "type": "link",
+     "target": "b02",
+     "u": 0.58,
+     "v": 0.56
+    },
+    {
+     "type": "link",
+     "target": "b00",
+     "u": 0.08,
+     "v": 0.56
+    }
+   ]
+  },
+  {
+   "id": "b02",
+   "file": "Bebeka - Coffee Farm 3.jpg",
+   "name": "Coffee Farm 3",
+   "zone": "farm",
+   "entryU": 0.5,
+   "hotspots": [
+    {
+     "type": "link",
+     "target": "b03",
+     "u": 0.58,
+     "v": 0.56
+    },
+    {
+     "type": "link",
+     "target": "b01",
+     "u": 0.08,
+     "v": 0.56
+    }
+   ]
+  },
+  {
+   "id": "b03",
+   "file": "Bebeka - Coffee Farm 4.jpg",
+   "name": "Coffee Farm 4",
+   "zone": "farm",
+   "entryU": 0.5,
+   "hotspots": [
+    {
+     "type": "link",
+     "target": "b04",
+     "u": 0.58,
+     "v": 0.56
+    },
+    {
+     "type": "link",
+     "target": "b02",
+     "u": 0.08,
+     "v": 0.56
+    }
+   ]
+  },
+  {
+   "id": "b04",
+   "file": "Bebeka - Coffee Farm 5.jpg",
+   "name": "Coffee Farm 5",
+   "zone": "farm",
+   "entryU": 0.5,
+   "hotspots": [
+    {
+     "type": "link",
+     "target": "b05",
+     "u": 0.58,
+     "v": 0.56
+    },
+    {
+     "type": "link",
+     "target": "b03",
+     "u": 0.08,
+     "v": 0.56
+    }
+   ]
+  },
+  {
+   "id": "b05",
+   "file": "Bebeka - Coffee Farm 6.jpg",
+   "name": "Coffee Farm 6",
+   "zone": "farm",
+   "entryU": 0.5,
+   "hotspots": [
+    {
+     "type": "link",
+     "target": "b06",
+     "u": 0.58,
+     "v": 0.56
+    },
+    {
+     "type": "link",
+     "target": "b04",
+     "u": 0.08,
+     "v": 0.56
+    }
+   ]
+  },
+  {
+   "id": "b06",
+   "file": "Bebeka - Coffee Farm 7.jpg",
+   "name": "Coffee Farm 7",
+   "zone": "farm",
+   "entryU": 0.5,
+   "hotspots": [
+    {
+     "type": "link",
+     "target": "b07",
+     "u": 0.58,
+     "v": 0.56
+    },
+    {
+     "type": "link",
+     "target": "b05",
+     "u": 0.08,
+     "v": 0.56
+    }
+   ]
+  },
+  {
+   "id": "b07",
+   "file": "Bebeka - Coffee Drying 1.jpg",
+   "name": "Coffee Drying 1",
+   "zone": "drying",
+   "entryU": 0.5,
+   "hotspots": [
+    {
+     "type": "link",
+     "target": "b08",
+     "u": 0.58,
+     "v": 0.56
+    },
+    {
+     "type": "link",
+     "target": "b06",
+     "u": 0.08,
+     "v": 0.56
+    }
+   ]
+  },
+  {
+   "id": "b08",
+   "file": "Bebeka - Coffee Drying 2.jpg",
+   "name": "Coffee Drying 2",
+   "zone": "drying",
+   "entryU": 0.5,
+   "hotspots": [
+    {
+     "type": "link",
+     "target": "b09",
+     "u": 0.58,
+     "v": 0.56
+    },
+    {
+     "type": "link",
+     "target": "b07",
+     "u": 0.08,
+     "v": 0.56
+    }
+   ]
+  },
+  {
+   "id": "b09",
+   "file": "Bebeka - Coffee processing .jpg",
+   "name": "Coffee Processing",
+   "zone": "processing",
+   "entryU": 0.5,
+   "hotspots": [
+    {
+     "type": "link",
+     "target": "b08",
+     "u": 0.08,
+     "v": 0.56
+    }
+   ]
+  }
+ ]
+}

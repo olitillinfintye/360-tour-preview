@@ -1,0 +1,167 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Dembi Resort 360 Tour (Preview)</title>
+<link rel="icon" href="data:,">
+<link rel="stylesheet" href="vendor/pannellum.css">
+<style>
+  :root { --bg: rgba(14,20,28,.82); --bd: rgba(255,255,255,.14); --fg: #eef3f7; --mut: #9fb0bf; --acc: #35c2b0; --info: #4aa8ff; --img: #ffc23d; --menu: #e36cff; }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; height: 100%; background: #000; color: var(--fg); font: 14px/1.4 "Segoe UI", system-ui, sans-serif; overflow: hidden; }
+  #pano { position: fixed; inset: 0; }
+  button { font: inherit; color: var(--fg); background: rgba(255,255,255,.08); border: 1px solid var(--bd); border-radius: 10px; padding: 7px 12px; cursor: pointer; }
+  button:hover { background: rgba(255,255,255,.18); }
+  button.pri { background: var(--acc); border-color: var(--acc); color: #04201c; font-weight: 600; }
+  .glass { background: var(--bg); border: 1px solid var(--bd); border-radius: 16px; backdrop-filter: blur(10px); box-shadow: 0 10px 40px rgba(0,0,0,.45); }
+
+  /* HUD (preview only) */
+  #hud { position: fixed; top: 14px; left: 14px; padding: 10px 14px; z-index: 10; min-width: 240px; }
+  #hud .brand { font-size: 12px; letter-spacing: .08em; text-transform: uppercase; color: var(--mut); display: flex; gap: 8px; align-items: center; }
+  #hud .badge { background: #ff5d73; color: #fff; border-radius: 6px; padding: 1px 6px; font-size: 10px; letter-spacing: .06em; }
+  #hud .badge.edit { background: var(--img); color: #222; }
+  #hud .loc { font-size: 22px; font-weight: 600; margin-top: 2px; }
+  #hud .zone { display: inline-flex; align-items: center; gap: 6px; font-size: 12px; color: var(--mut); }
+  .dot { width: 9px; height: 9px; border-radius: 50%; display: inline-block; flex: none; }
+  #tools { position: fixed; top: 14px; right: 14px; display: flex; gap: 8px; z-index: 10; }
+  #tools button { background: var(--bg); backdrop-filter: blur(8px); }
+  #tools button.on { background: var(--img); color: #222; border-color: var(--img); }
+
+  /* hotspots */
+  .hs { width: 46px; height: 46px; }
+  .hs .ring { width: 46px; height: 46px; border-radius: 50%; display: grid; place-items: center; background: rgba(10,16,22,.55); border: 3px solid #fff; box-shadow: 0 0 0 4px rgba(0,0,0,.25), 0 4px 14px rgba(0,0,0,.5); transition: transform .15s, background .15s; }
+  .hs .ring svg { width: 24px; height: 24px; fill: #fff; }
+  .hs-link .ring { border-color: var(--acc); }
+  .hs-info .ring { border-color: var(--info); }
+  .hs-image .ring { border-color: var(--img); }
+  .hs:hover .ring { transform: scale(1.18); background: rgba(10,16,22,.85); }
+  .hs .lbl { position: absolute; top: 52px; left: 50%; transform: translateX(-50%); white-space: nowrap; font-size: 13px; font-weight: 600; padding: 3px 9px; border-radius: 8px; background: rgba(0,0,0,.6); pointer-events: none; text-shadow: 0 1px 2px #000; }
+  .hs.sel .ring { border-color: #ffe14d; animation: pulse 1s infinite; }
+  @keyframes pulse { 50% { box-shadow: 0 0 0 10px rgba(255,225,77,.35); } }
+
+  /* in-world menu (world-space canvas at Main Gate 1) */
+  .hs.hs-menu { width: 520px; height: auto; }
+  .wmenu { padding: 16px 16px 14px; border-radius: 20px; background: rgba(10,16,24,.86); border: 2px solid rgba(255,255,255,.22); box-shadow: 0 18px 50px rgba(0,0,0,.55); }
+  .hs-menu.sel .wmenu { border-color: #ffe14d; box-shadow: 0 0 0 6px rgba(255,225,77,.35); }
+  .wmenu .t { font-size: 22px; font-weight: 700; text-align: center; }
+  .wmenu .s { font-size: 12px; color: var(--mut); text-align: center; margin-bottom: 12px; letter-spacing: .04em; }
+  .wmenu .g { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; }
+  .wmenu .b { display: flex; align-items: center; gap: 8px; padding: 5px; border-radius: 11px; background: rgba(255,255,255,.07); border: 1px solid rgba(255,255,255,.12); cursor: pointer; transition: background .12s, transform .12s; }
+  .wmenu .b:hover { background: rgba(53,194,176,.3); border-color: var(--acc); transform: scale(1.04); }
+  .wmenu .b img { width: 52px; height: 30px; object-fit: cover; border-radius: 7px; flex: none; }
+  .wmenu .b span { font-weight: 600; font-size: 13px; line-height: 1.15; }
+  .wmenu .b .dot { width: 7px; height: 7px; }
+  .wmenu .f { margin-top: 10px; text-align: center; font-size: 11px; color: var(--mut); }
+
+  /* popup (C360 Animated Popup) */
+  #popup { position: fixed; left: 50%; top: 50%; transform: translate(-50%,-50%) scale(.9); opacity: 0; pointer-events: none; transition: .2s; z-index: 20; width: min(520px, 92vw); padding: 18px 20px; }
+  #popup.open { opacity: 1; transform: translate(-50%,-50%) scale(1); pointer-events: auto; }
+  #popup h2 { margin: 0 0 6px; font-size: 20px; }
+  #popup p { margin: 0; color: #d5dee6; }
+  #popup img { width: 100%; border-radius: 10px; margin-top: 10px; display: block; }
+  #popup .x { position: absolute; top: 10px; right: 10px; padding: 3px 9px; }
+
+  /* guided tour */
+  #guide { position: fixed; left: 50%; bottom: 24px; transform: translateX(-50%); padding: 10px 14px; z-index: 11; display: none; align-items: center; gap: 12px; min-width: 440px; }
+  #guide.on { display: flex; }
+  #guide .bar { flex: 1; height: 6px; background: rgba(255,255,255,.15); border-radius: 3px; overflow: hidden; }
+  #guide .bar i { display: block; height: 100%; width: 0; background: var(--acc); }
+
+  /* edit panel */
+  #edit { position: fixed; top: 70px; right: 14px; bottom: 24px; width: 340px; padding: 14px; z-index: 12; display: none; flex-direction: column; gap: 10px; overflow: auto; }
+  #edit.on { display: flex; }
+  #edit h3 { margin: 0; font-size: 16px; }
+  #edit .help { color: var(--mut); font-size: 12px; }
+  #edit .row { display: flex; gap: 6px; align-items: center; flex-wrap: wrap; }
+  #edit select, #edit input, #edit textarea { font: inherit; color: var(--fg); background: rgba(255,255,255,.06); border: 1px solid var(--bd); border-radius: 8px; padding: 6px 8px; }
+  #edit select { flex: 1; min-width: 0; }
+  #edit select option { background: #1b2530; }
+  #edit input, #edit textarea { width: 100%; }
+  #hsl { display: flex; flex-direction: column; gap: 4px; }
+  #hsl .it { display: flex; gap: 8px; align-items: center; padding: 6px 8px; border-radius: 8px; border: 1px solid var(--bd); cursor: pointer; }
+  #hsl .it.sel { border-color: #ffe14d; background: rgba(255,225,77,.12); }
+  #hsl .it .ty { font-size: 10px; text-transform: uppercase; padding: 1px 5px; border-radius: 4px; color: #111; }
+  #hsl .it .uv { margin-left: auto; color: var(--mut); font-size: 11px; font-family: Consolas, monospace; }
+  #cursor { font-family: Consolas, monospace; color: var(--img); font-size: 12px; }
+  #toast { position: fixed; left: 50%; top: 18px; transform: translateX(-50%); padding: 8px 14px; z-index: 50; display: none; }
+
+  /* unity mapping */
+  .modal { position: fixed; inset: 0; display: none; place-items: center; z-index: 30; background: rgba(0,0,0,.35); }
+  .modal.open { display: grid; }
+  #about .panel { width: min(880px, 94vw); max-height: 90vh; overflow: auto; padding: 22px 26px; }
+  #about h2 { margin: 0 0 4px; }
+  #about table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 13px; }
+  #about td, #about th { text-align: left; padding: 7px 8px; border-bottom: 1px solid var(--bd); vertical-align: top; }
+  #about th { color: var(--mut); font-weight: 600; }
+  #about code { color: var(--img); }
+  #about .stats { display: flex; gap: 10px; margin: 12px 0; flex-wrap: wrap; }
+  #about .stats div { padding: 8px 14px; border-radius: 10px; border: 1px solid var(--bd); }
+  #about .stats b { font-size: 20px; display: block; }
+  .pnlm-load-box { background: var(--bg); border-radius: 12px; }
+  .pnlm-controls-container { top: auto !important; bottom: 14px; left: 14px !important; }
+</style>
+</head>
+<body>
+<div id="pano"></div>
+
+<div id="hud" class="glass">
+  <div class="brand"><span id="brandName">Dembi Resort 360 Tour</span> <span class="badge">PREVIEW</span><span class="badge edit" id="editedBadge" hidden>EDITED</span></div>
+  <div class="loc" id="locName">…</div>
+  <div class="zone"><span class="dot" id="zoneDot"></span><span id="zoneName"></span></div>
+</div>
+
+<div id="tools">
+  <button id="bGuide" title="Guided Tour (G)">▶ Guided Tour</button>
+  <button id="bEdit" title="Edit hotspots (E)">✎ Edit</button>
+  <a href="home.html" id="bHome" style="text-decoration:none"><button>⌂ Tours</button></a>
+  <button id="bAbout" title="How this maps to Unity">? Unity</button>
+</div>
+
+<div id="popup" class="glass"><button class="x" id="popX">✕</button><h2 id="popT"></h2><p id="popB"></p><img id="popI" alt=""></div>
+
+<div id="guide" class="glass">
+  <b>Guided Tour</b><span id="gStep"></span><div class="bar"><i id="gBar"></i></div>
+  <button id="gPause">❚❚</button><button id="gNext">⏭</button><button id="gStop">■ Stop</button>
+</div>
+
+<div id="edit" class="glass">
+  <h3>Edit hotspots: <span id="eNode"></span></h3>
+  <div class="row"><span>Jump to</span><select id="eJump"></select></div>
+  <div class="help">Click a hotspot (or the menu) on the panorama or in the list to select it, then <b>click anywhere on the panorama</b> to move it there. Dragging still rotates the view. Edits are kept in this browser until you reset them.</div>
+  <div id="cursor">cursor u,v: —</div>
+  <div class="row"><span>Entry view u=<b id="eEntry"></b></span><button id="eSetEntry">Use current view</button></div>
+  <div id="hsl"></div>
+  <div id="eSel"></div>
+  <div class="row"><select id="eTarget"></select><button id="eAddLink">+ Link</button></div>
+  <div class="row"><button id="eAddInfo">+ Info point</button><button id="eAddImg">+ Map popup</button></div>
+  <div class="row" style="margin-top:auto"><button class="pri" id="eSave">💾 Save to project</button><button id="eDl">⬇ JSON</button><button id="eReset">Reset edits</button></div>
+</div>
+
+<div id="about" class="modal"><div class="panel glass">
+  <h2>Dembi Resort: 360 VR Tour preview</h2>
+  <div style="color:var(--mut)">This is a browser mock-up of the experience I will build in the <b>Tour</b> scene using the existing Complete 360 Tour (C360) system. Nothing has been changed in Unity yet. The tour starts at <b>Main Gate 1</b>, where the menu is.</div>
+  <div class="stats" id="stats"></div>
+  <table>
+    <tr><th>Preview feature</th><th>How it will be built in Unity (Tour scene)</th></tr>
+    <tr><td>35 panorama locations</td><td>New tour asset <code>Assets/Tours/Dembi Tour.asset</code>: one C360 <code>ImageNode</code> per image in <code>Video/360Images</code>, named after the image (e.g. "Main Gate 1"). Entry node: <b>Main Gate 1</b>. Texture import is fixed (no mipmaps, higher max size) for sharp, seamless panoramas. The Example Tour is left untouched.</td></tr>
+    <tr><td>Menu at Main Gate 1</td><td>World-space <b>uGUI canvas</b> placed in the Main Gate 1 panorama (C360 <code>PrefabElement</code>). It has one button per main area, named after the images (Main Gate, Reception, Restaurant, Lakeshore, Lookout Pier, Lake, Bridge, Waterfall, Compound, Massage Room, Room, Room 2nd, Room 3rd). Each button jumps to the first image of that area.</td></tr>
+    <tr><td>Ray interaction on canvases</td><td><code>C360VrPointer</code> extended so the controller laser drives <b>any</b> world-space canvas (Buttons, Toggles, Sliders, Scroll views) through the EventSystem, plus the C360 hotspots and popups. Hover highlight, trigger = click, and the laser stops at the hit point with a cursor.</td></tr>
+    <tr><td>Navigation hotspots (teal)</td><td>C360 <code>HotspotElement</code> using the existing Hotspot prefab, labelled with the destination name.</td></tr>
+    <tr><td>Info points (blue)</td><td><code>PrefabElement</code> with <code>Text Popup</code> prefab variants (title + body). The text here is placeholder you can change.</td></tr>
+    <tr><td>Resort Map (amber)</td><td><code>PrefabElement</code> with an <code>Image Popup</code> variant showing the map image.</td></tr>
+    <tr><td>Entry view per location</td><td>Node <code>entryYaw</code> + the existing <code>EntryYawReactor</code>.</td></tr>
+    <tr><td>Guided Tour</td><td>C360 <code>AutoTour</code> component (same route, 12 s per stop).</td></tr>
+    <tr><td>Scene fade</td><td>C360 <code>FadeTransition</code>. The original fade effect does not render under URP, so I will add a URP-compatible fade.</td></tr>
+    <tr><td>Top-left label, toolbar, edit panel</td><td>Preview-only helpers; they are not part of the VR build.</td></tr>
+  </table>
+  <div style="color:var(--mut);font-size:13px">Tip: use <b>✎ Edit</b> to move any hotspot (or the menu) that isn't exactly where you want it, then press <b>Save to project</b>. I'll use your saved layout when building the Unity version.</div>
+  <div style="text-align:right;margin-top:14px"><button class="pri" id="aClose">Start the tour</button></div>
+</div></div>
+
+<div id="toast" class="glass"></div>
+
+<script src="vendor/pannellum.js"></script>
+<script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,1046 @@
+{
+ "title": "Dembi Resort 360 Tour",
+ "start": "p15",
+ "menu": {
+  "node": "p15",
+  "title": "Dembi Resort",
+  "subtitle": "Choose an area to visit"
+ },
+ "zones": [
+  {
+   "id": "gate",
+   "name": "Main Gate",
+   "target": "p15",
+   "color": "#e76f51",
+   "nodes": [
+    "p15",
+    "p16",
+    "p17",
+    "p18"
+   ]
+  },
+  {
+   "id": "reception",
+   "name": "Reception",
+   "target": "p24",
+   "color": "#f4a261",
+   "nodes": [
+    "p03",
+    "p24",
+    "p25"
+   ]
+  },
+  {
+   "id": "restaurant",
+   "name": "Restaurant",
+   "target": "p26",
+   "color": "#e9c46a",
+   "nodes": [
+    "p26",
+    "p27",
+    "p28",
+    "p29"
+   ]
+  },
+  {
+   "id": "lakeshore",
+   "name": "Lakeshore",
+   "target": "p02",
+   "color": "#2a9d8f",
+   "nodes": [
+    "p02"
+   ]
+  },
+  {
+   "id": "pier",
+   "name": "Lookout Pier",
+   "target": "p14",
+   "color": "#3fb8c9",
+   "nodes": [
+    "p13",
+    "p14"
+   ]
+  },
+  {
+   "id": "lake",
+   "name": "Lake",
+   "target": "p22",
+   "color": "#4a90d9",
+   "nodes": [
+    "p22"
+   ]
+  },
+  {
+   "id": "bridge",
+   "name": "Bridge",
+   "target": "p00",
+   "color": "#9c89b8",
+   "nodes": [
+    "p00"
+   ]
+  },
+  {
+   "id": "waterfall",
+   "name": "Waterfall",
+   "target": "p12",
+   "color": "#6ab04c",
+   "nodes": [
+    "p11",
+    "p12"
+   ]
+  },
+  {
+   "id": "compound",
+   "name": "Compound",
+   "target": "p01",
+   "color": "#8a81d6",
+   "nodes": [
+    "p01",
+    "p19",
+    "p20",
+    "p21"
+   ]
+  },
+  {
+   "id": "massage",
+   "name": "Massage Room",
+   "target": "p23",
+   "color": "#d681be",
+   "nodes": [
+    "p23"
+   ]
+  },
+  {
+   "id": "room",
+   "name": "Room",
+   "target": "p04",
+   "color": "#56a0e6",
+   "nodes": [
+    "p04",
+    "p05",
+    "p06",
+    "p07",
+    "p08",
+    "p09",
+    "p10"
+   ]
+  },
+  {
+   "id": "room2",
+   "name": "Room 2nd",
+   "target": "p30",
+   "color": "#56c8e6",
+   "nodes": [
+    "p30",
+    "p31",
+    "p32"
+   ]
+  },
+  {
+   "id": "room3",
+   "name": "Room 3rd",
+   "target": "p33",
+   "color": "#82dce6",
+   "nodes": [
+    "p33",
+    "p34"
+   ]
+  }
+ ],
+ "guided": [
+  "p15",
+  "p18",
+  "p03",
+  "p24",
+  "p26",
+  "p27",
+  "p29",
+  "p02",
+  "p13",
+  "p22",
+  "p14",
+  "p00",
+  "p12",
+  "p01",
+  "p21",
+  "p23",
+  "p04",
+  "p05",
+  "p10",
+  "p30",
+  "p33",
+  "p34"
+ ],
+ "guidedSeconds": 12,
+ "nodes": [
+  {
+   "id": "p00",
+   "file": "Dembi - Bridge.jpg",
+   "name": "Bridge",
+   "zone": "bridge",
+   "entryU": 0.45,
+   "hotspots": [
+    {
+     "type": "link",
+     "target": "p14",
+     "u": 0.15,
+     "v": 0.53
+    },
+    {
+     "type": "link",
+     "target": "p11",
+     "u": 0.45,
+     "v": 0.54
+    },
+    {
+     "type": "link",
+     "target": "p20",
+     "u": 0.92,
+     "v": 0.55
+    }
+   ]
+  },
+  {
+   "id": "p01",
+   "file": "Dembi - Compound 1.jpg",
+   "name": "Compound 1",
+   "zone": "compound",
+   "entryU": 0.5,
+   "hotspots": [
+    {
+     "type": "link",
+     "target": "p19",
+     "u": 0.5,
+     "v": 0.53
+    },
+    {
+     "type": "link",
+     "target": "p21",
+     "u": 0.83,
+     "v": 0.53
+    },
+    {
+     "type": "link",
+     "target": "p18",
+     "u": 0.12,
+     "v": 0.55
+    }
+   ]
+  },
+  {
+   "id": "p02",
+   "file": "Dembi - Lakeshore 1.jpg",
+   "name": "Lakeshore 1",
+   "zone": "lakeshore",
+   "entryU": 0.48,
+   "hotspots": [
+    {
+     "type": "link",
+     "target": "p13",
+     "u": 0.48,
+     "v": 0.53
+    },
+    {
+     "type": "link",
+     "target": "p29",
+     "u": 0.9,
+     "v": 0.47
+    }
+   ]
+  },
+  {
+   "id": "p03",
+   "file": "Dembi - Reception Parking.jpg",
+   "name": "Reception Parking",
+   "zone": "reception",
+   "entryU": 0.15,
+   "hotspots": [
+    {
+     "type": "link",
+     "target": "p24",
+     "u": 0.15,
+     "v": 0.53
+    },
+    {
+     "type": "link",
+     "target": "p18",
+     "u": 0.42,
+     "v": 0.55
+    },
+    {
+     "type": "link",
+     "target": "p01",
+     "u": 0.62,
+     "v": 0.55
+    }
+   ]
+  },
+  {
+   "id": "p04",
+   "file": "Dembi - Room 1.jpg",
+   "name": "Room 1",
+   "zone": "room",
+   "entryU": 0.68,
+   "hotspots": [
+    {
+     "type": "link",
+     "target": "p05",
+     "u": 0.68,
+     "v": 0.55
+    },
+    {
+     "type": "link",
+     "target": "p09",
+     "u": 0.4,
+     "v": 0.52
+    },
+    {
+     "type": "link",
+     "target": "p08",
+     "u": 0.5,
+     "v": 0.52
+    },
+    {
+     "type": "link",
+     "target": "p19",
+     "u": 0.13,
+     "v": 0.52
+    }
+   ]
+  },
+  {
+   "id": "p05",
+   "file": "Dembi - Room 2.jpg",
+   "name": "Room 2",
+   "zone": "room",
+   "entryU": 0.24,
+   "hotspots": [
+    {
+     "type": "link",
+     "target": "p07",
+     "u": 0.24,
+     "v": 0.52
+    },
+    {
+     "type": "link",
+     "target": "p06",
+     "u": 0.8,
+     "v": 0.55
+    },
+    {
+     "type": "link",
+     "target": "p10",
+     "u": 0.95,
+     "v": 0.52
+    },
+    {
+     "type": "link",
+     "target": "p04",
+     "u": 0.05,
+     "v": 0.53
+    }
+   ]
+  },
+  {
+   "id": "p06",
+   "file": "Dembi - Room 3.jpg",
+   "name": "Room 3",
+   "zone": "room",
+   "entryU": 0.62,
+   "hotspots": [
+    {
+     "type": "link",
+     "target": "p05",
+     "u": 0.62,
+     "v": 0.53
+    },
+    {
+     "type": "link",
+     "target": "p04",
+     "u": 0.5,
+     "v": 0.5
+    }
+   ]
+  },
+  {
+   "id": "p07",
+   "file": "Dembi - Room_Bedroom 2.jpg",
+   "name": "Room Bedroom 2",
+   "zone": "room",
+   "entryU": 0.85,
+   "hotspots": [
+    {
+     "type": "link",
+     "target": "p10",
+     "u": 0.85,
+     "v": 0.55
+    },
+    {
+     "type": "link",
+     "target": "p05",
+     "u": 0.27,
+     "v": 0.52
+    }
+   ]
+  },
+  {
+   "id": "p08",
+   "file": "Dembi - Room_Bedroom 3.jpg",
+   "name": "Room Bedroom 3",
+   "zone": "room",
+   "entryU": 0.75,
+   "hotspots": [
+    {
+     "type": "link",
+     "target": "p04",
+     "u": 0.75,
+     "v": 0.52
+    },
+    {
+     "type": "info",
+     "u": 0.22,
+     "v": 0.52,
+     "title": "En-suite Bathroom",
+     "text": "Private bathroom with shower. (Placeholder text.)"
+    }
+   ]
+  },
+  {
+   "id": "p09",
+   "file": "Dembi - Room_Bedroom.jpg",
+   "name": "Room Bedroom",
+   "zone": "room",
+   "entryU": 0.5,
+   "hotspots": [
+    {
+     "type": "link",
+     "target": "p10",
+     "u": 0.5,
+     "v": 0.55
+    },
+    {
+     "type": "link",
+     "target": "p04",
+     "u": 0.12,
+     "v": 0.52
+    }
+   ]
+  },
+  {
+   "id": "p10",
+   "file": "Dembi - Room_balcony.jpg",
+   "name": "Room Balcony",
+   "zone": "room",
+   "entryU": 0.5,
+   "hotspots": [
+    {
+     "type": "link",
+     "target": "p09",
+     "u": 0.08,
+     "v": 0.52
+    },
+    {
+     "type": "link",
+     "target": "p05",
+     "u": 0.92,
+     "v": 0.52
+    },
+    {
+     "type": "info",
+     "u": 0.5,
+     "v": 0.45,
+     "title": "Lake View",
+     "text": "The balcony overlooks the lake. (Placeholder text.)"
+    }
+   ]
+  },
+  {
+   "id": "p11",
+   "file": "Dembi - Waterfall 2.jpg",
+   "name": "Waterfall 2",
+   "zone": "waterfall",
+   "entryU": 0.95,
+   "hotspots": [
+    {
+     "type": "link",
+     "target": "p12",
+     "u": 0.95,
+     "v": 0.52
+    },
+    {
+     "type": "link",
+     "target": "p00",
+     "u": 0.6,
+     "v": 0.53
+    }
+   ]
+  },
+  {
+   "id": "p12",
+   "file": "Dembi - Waterfall.jpg",
+   "name": "Waterfall",
+   "zone": "waterfall",
+   "entryU": 0.45,
+   "hotspots": [
+    {
+     "type": "link",
+     "target": "p11",
+     "u": 0.9,
+     "v": 0.48
+    },
+    {
+     "type": "info",
+     "u": 0.45,
+     "v": 0.45,
+     "title": "Waterfall",
+     "text": "A short walk from the bridge. (Placeholder text: add trail info.)"
+    }
+   ]
+  },
+  {
+   "id": "p13",
+   "file": "Dembi - lookout pier 2 .jpg",
+   "name": "Lookout Pier 2",
+   "zone": "pier",
+   "entryU": 0.5,
+   "hotspots": [
+    {
+     "type": "link",
+     "target": "p22",
+     "u": 0.5,
+     "v": 0.5
+    },
+    {
+     "type": "link",
+     "target": "p02",
+     "u": 0.97,
+     "v": 0.52
+    },
+    {
+     "type": "info",
+     "u": 0.68,
+     "v": 0.6,
+     "title": "Kayaking",
+     "text": "Kayaks are available at the pier. (Placeholder text: add rental details.)"
+    }
+   ]
+  },
+  {
+   "id": "p14",
+   "file": "Dembi - lookout pier.jpg",
+   "name": "Lookout Pier",
+   "zone": "pier",
+   "entryU": 0.45,
+   "hotspots": [
+    {
+     "type": "link",
+     "target": "p22",
+     "u": 0.45,
+     "v": 0.5
+    },
+    {
+     "type": "link",
+     "target": "p00",
+     "u": 0.97,
+     "v": 0.55
+    }
+   ]
+  },
+  {
+   "id": "p15",
+   "file": "Dembi- Main Gate -1.jpg",
+   "name": "Main Gate 1",
+   "zone": "gate",
+   "entryU": 0.86,
+   "hotspots": [
+    {
+     "type": "link",
+     "target": "p16",
+     "u": 0.98,
+     "v": 0.56
+    },
+    {
+     "type": "menu",
+     "u": 0.86,
+     "v": 0.46
+    },
+    {
+     "type": "info",
+     "u": 0.74,
+     "v": 0.5,
+     "title": "Welcome to Dembi Resort",
+     "text": "Your virtual tour starts here at the Main Gate. Use the menu to jump to any area, or follow the hotspots: point the controller ray and pull the trigger."
+    },
+    {
+     "type": "image",
+     "u": 0.68,
+     "v": 0.5,
+     "title": "Resort Map",
+     "image": "map.png",
+     "text": "Overview of every area in this tour."
+    }
+   ]
+  },
+  {
+   "id": "p16",
+   "file": "Dembi- Main Gate -2.jpg",
+   "name": "Main Gate 2",
+   "zone": "gate",
+   "entryU": 0.47,
+   "hotspots": [
+    {
+     "type": "link",
+     "target": "p17",
+     "u": 0.47,
+     "v": 0.57
+    },
+    {
+     "type": "link",
+     "target": "p15",
+     "u": 0.95,
+     "v": 0.58
+    }
+   ]
+  },
+  {
+   "id": "p17",
+   "file": "Dembi- Main Gate -3.jpg",
+   "name": "Main Gate 3",
+   "zone": "gate",
+   "entryU": 0.78,
+   "hotspots": [
+    {
+     "type": "link",
+     "target": "p18",
+     "u": 0.78,
+     "v": 0.56
+    },
+    {
+     "type": "link",
+     "target": "p16",
+     "u": 0.3,
+     "v": 0.57
+    }
+   ]
+  },
+  {
+   "id": "p18",
+   "file": "Dembi- Main Gate -4.jpg",
+   "name": "Main Gate 4",
+   "zone": "gate",
+   "entryU": 0.45,
+   "hotspots": [
+    {
+     "type": "link",
+     "target": "p03",
+     "u": 0.45,
+     "v": 0.55
+    },
+    {
+     "type": "link",
+     "target": "p01",
+     "u": 0.12,
+     "v": 0.55
+    },
+    {
+     "type": "link",
+     "target": "p17",
+     "u": 0.95,
+     "v": 0.56
+    }
+   ]
+  },
+  {
+   "id": "p19",
+   "file": "Dembi-compound 2.jpg",
+   "name": "Compound 2",
+   "zone": "compound",
+   "entryU": 0.45,
+   "hotspots": [
+    {
+     "type": "link",
+     "target": "p20",
+     "u": 0.45,
+     "v": 0.53
+    },
+    {
+     "type": "link",
+     "target": "p04",
+     "u": 0.68,
+     "v": 0.55
+    },
+    {
+     "type": "link",
+     "target": "p01",
+     "u": 0.05,
+     "v": 0.55
+    }
+   ]
+  },
+  {
+   "id": "p20",
+   "file": "Dembi-compound 3.jpg",
+   "name": "Compound 3",
+   "zone": "compound",
+   "entryU": 0.67,
+   "hotspots": [
+    {
+     "type": "link",
+     "target": "p00",
+     "u": 0.67,
+     "v": 0.52
+    },
+    {
+     "type": "link",
+     "target": "p19",
+     "u": 0.03,
+     "v": 0.56
+    }
+   ]
+  },
+  {
+   "id": "p21",
+   "file": "Dembi-compound 4.jpg",
+   "name": "Compound 4",
+   "zone": "compound",
+   "entryU": 0.42,
+   "hotspots": [
+    {
+     "type": "link",
+     "target": "p30",
+     "u": 0.42,
+     "v": 0.52
+    },
+    {
+     "type": "link",
+     "target": "p33",
+     "u": 0.6,
+     "v": 0.52
+    },
+    {
+     "type": "link",
+     "target": "p23",
+     "u": 0.75,
+     "v": 0.53
+    },
+    {
+     "type": "link",
+     "target": "p20",
+     "u": 0.02,
+     "v": 0.55
+    }
+   ]
+  },
+  {
+   "id": "p22",
+   "file": "Denbi - Lake.jpg",
+   "name": "Lake",
+   "zone": "lake",
+   "entryU": 0.5,
+   "hotspots": [
+    {
+     "type": "link",
+     "target": "p13",
+     "u": 0.97,
+     "v": 0.5
+    }
+   ]
+  },
+  {
+   "id": "p23",
+   "file": "Denbi - Massage Room.jpg",
+   "name": "Massage Room",
+   "zone": "massage",
+   "entryU": 0.5,
+   "hotspots": [
+    {
+     "type": "link",
+     "target": "p21",
+     "u": 0.9,
+     "v": 0.52
+    },
+    {
+     "type": "info",
+     "u": 0.5,
+     "v": 0.55,
+     "title": "Massage Room",
+     "text": "Relaxing treatments by appointment. (Placeholder text: add treatment list.)"
+    }
+   ]
+  },
+  {
+   "id": "p24",
+   "file": "Denbi - Reception 1.jpg",
+   "name": "Reception 1",
+   "zone": "reception",
+   "entryU": 0.47,
+   "hotspots": [
+    {
+     "type": "link",
+     "target": "p25",
+     "u": 0.47,
+     "v": 0.52
+    },
+    {
+     "type": "link",
+     "target": "p03",
+     "u": 0.92,
+     "v": 0.53
+    },
+    {
+     "type": "info",
+     "u": 0.4,
+     "v": 0.58,
+     "title": "Reception Desk",
+     "text": "Check-in, check-out and guest services. (Placeholder text: add opening hours and contact details.)"
+    },
+    {
+     "type": "image",
+     "u": 0.3,
+     "v": 0.5,
+     "title": "Resort Map",
+     "image": "map.png",
+     "text": "Overview of every area in this tour."
+    }
+   ]
+  },
+  {
+   "id": "p25",
+   "file": "Denbi - Reception 2.jpg",
+   "name": "Reception 2",
+   "zone": "reception",
+   "entryU": 0.47,
+   "hotspots": [
+    {
+     "type": "link",
+     "target": "p26",
+     "u": 0.47,
+     "v": 0.52
+    },
+    {
+     "type": "link",
+     "target": "p24",
+     "u": 0.02,
+     "v": 0.53
+    }
+   ]
+  },
+  {
+   "id": "p26",
+   "file": "Denbi - Restaurant 1.jpg",
+   "name": "Restaurant 1",
+   "zone": "restaurant",
+   "entryU": 0.25,
+   "hotspots": [
+    {
+     "type": "link",
+     "target": "p27",
+     "u": 0.25,
+     "v": 0.52
+    },
+    {
+     "type": "link",
+     "target": "p25",
+     "u": 0.95,
+     "v": 0.53
+    }
+   ]
+  },
+  {
+   "id": "p27",
+   "file": "Denbi - Restaurant 2.jpg",
+   "name": "Restaurant 2",
+   "zone": "restaurant",
+   "entryU": 0.7,
+   "hotspots": [
+    {
+     "type": "link",
+     "target": "p29",
+     "u": 0.7,
+     "v": 0.53
+    },
+    {
+     "type": "link",
+     "target": "p28",
+     "u": 0.95,
+     "v": 0.52
+    },
+    {
+     "type": "link",
+     "target": "p26",
+     "u": 0.05,
+     "v": 0.52
+    },
+    {
+     "type": "info",
+     "u": 0.45,
+     "v": 0.55,
+     "title": "Bar",
+     "text": "Drinks and refreshments. (Placeholder text: add bar hours and highlights.)"
+    }
+   ]
+  },
+  {
+   "id": "p28",
+   "file": "Denbi - Restaurant 3.jpg",
+   "name": "Restaurant 3",
+   "zone": "restaurant",
+   "entryU": 0.05,
+   "hotspots": [
+    {
+     "type": "link",
+     "target": "p29",
+     "u": 0.05,
+     "v": 0.52
+    },
+    {
+     "type": "link",
+     "target": "p27",
+     "u": 0.78,
+     "v": 0.52
+    },
+    {
+     "type": "info",
+     "u": 0.5,
+     "v": 0.6,
+     "title": "Buffet",
+     "text": "Breakfast, lunch and dinner buffet. (Placeholder text: add serving times.)"
+    }
+   ]
+  },
+  {
+   "id": "p29",
+   "file": "Denbi - Restaurant 4.jpg",
+   "name": "Restaurant 4",
+   "zone": "restaurant",
+   "entryU": 0.5,
+   "hotspots": [
+    {
+     "type": "link",
+     "target": "p02",
+     "u": 0.5,
+     "v": 0.6
+    },
+    {
+     "type": "link",
+     "target": "p27",
+     "u": 0.07,
+     "v": 0.52
+    },
+    {
+     "type": "link",
+     "target": "p28",
+     "u": 0.93,
+     "v": 0.52
+    }
+   ]
+  },
+  {
+   "id": "p30",
+   "file": "Denbi - Room 2nd_.jpg",
+   "name": "Room 2nd",
+   "zone": "room2",
+   "entryU": 0.58,
+   "hotspots": [
+    {
+     "type": "link",
+     "target": "p32",
+     "u": 0.58,
+     "v": 0.52
+    },
+    {
+     "type": "link",
+     "target": "p31",
+     "u": 0.33,
+     "v": 0.52
+    },
+    {
+     "type": "link",
+     "target": "p21",
+     "u": 0.14,
+     "v": 0.52
+    }
+   ]
+  },
+  {
+   "id": "p31",
+   "file": "Denbi - Room 2nd_Bedroom 2_.jpg",
+   "name": "Room 2nd Bedroom 2",
+   "zone": "room2",
+   "entryU": 0.28,
+   "hotspots": [
+    {
+     "type": "link",
+     "target": "p30",
+     "u": 0.28,
+     "v": 0.52
+    }
+   ]
+  },
+  {
+   "id": "p32",
+   "file": "Denbi - Room 2nd_Bedroom.jpg",
+   "name": "Room 2nd Bedroom",
+   "zone": "room2",
+   "entryU": 0.15,
+   "hotspots": [
+    {
+     "type": "link",
+     "target": "p30",
+     "u": 0.15,
+     "v": 0.52
+    },
+    {
+     "type": "info",
+     "u": 0.65,
+     "v": 0.52,
+     "title": "Bathroom",
+     "text": "En-suite bathroom. (Placeholder text.)"
+    }
+   ]
+  },
+  {
+   "id": "p33",
+   "file": "Denbi - Room3rd.jpg",
+   "name": "Room 3rd",
+   "zone": "room3",
+   "entryU": 0.5,
+   "hotspots": [
+    {
+     "type": "link",
+     "target": "p34",
+     "u": 0.5,
+     "v": 0.55
+    },
+    {
+     "type": "link",
+     "target": "p21",
+     "u": 0.88,
+     "v": 0.52
+    },
+    {
+     "type": "info",
+     "u": 0.72,
+     "v": 0.52,
+     "title": "Bathroom",
+     "text": "En-suite bathroom. (Placeholder text.)"
+    }
+   ]
+  },
+  {
+   "id": "p34",
+   "file": "Denbi - Room3rd_ Balcony.jpg",
+   "name": "Room 3rd Balcony",
+   "zone": "room3",
+   "entryU": 0.5,
+   "hotspots": [
+    {
+     "type": "link",
+     "target": "p33",
+     "u": 0.08,
+     "v": 0.52
+    }
+   ]
+  }
+ ]
+}

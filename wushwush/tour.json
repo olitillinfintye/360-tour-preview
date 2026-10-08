@@ -1,0 +1,325 @@
+{
+ "title": "Wush Wush Tea Farm 360 Tour",
+ "base": "wushwush/",
+ "start": "w00",
+ "menu": {
+  "node": "w00",
+  "title": "Wush Wush Tea Farm",
+  "subtitle": "Choose an area to visit"
+ },
+ "zones": [
+  {
+   "id": "a",
+   "name": "Tea Farm 1-4",
+   "target": "w00",
+   "color": "#2a9d5c",
+   "nodes": [
+    "w00",
+    "w01",
+    "w02",
+    "w03"
+   ]
+  },
+  {
+   "id": "b",
+   "name": "Tea Farm 5-8",
+   "target": "w04",
+   "color": "#8ab33f",
+   "nodes": [
+    "w04",
+    "w05",
+    "w06",
+    "w07"
+   ]
+  },
+  {
+   "id": "c",
+   "name": "Tea Farm 9-12",
+   "target": "w08",
+   "color": "#3b8ea5",
+   "nodes": [
+    "w08",
+    "w09",
+    "w10",
+    "w11"
+   ]
+  }
+ ],
+ "guided": [
+  "w00",
+  "w01",
+  "w02",
+  "w03",
+  "w04",
+  "w05",
+  "w06",
+  "w07",
+  "w08",
+  "w09",
+  "w10",
+  "w11"
+ ],
+ "guidedSeconds": 12,
+ "nodes": [
+  {
+   "id": "w00",
+   "file": "Wush Wush  - Tea Farm _1.jpg",
+   "name": "Tea Farm 1",
+   "zone": "a",
+   "entryU": 0.5,
+   "hotspots": [
+    {
+     "type": "link",
+     "target": "w01",
+     "u": 0.58,
+     "v": 0.56
+    },
+    {
+     "type": "menu",
+     "u": 0.42,
+     "v": 0.46
+    },
+    {
+     "type": "info",
+     "u": 0.5,
+     "v": 0.46,
+     "title": "Welcome to Wush Wush Tea Farm",
+     "text": "Explore the tea farm. Use the menu to jump to an area, or follow the arrows. This text is a placeholder."
+    },
+    {
+     "type": "image",
+     "u": 0.66,
+     "v": 0.46,
+     "title": "Wush Wush Tea Farm Map",
+     "image": "wushwush/map.png",
+     "text": "Overview of every area in this tour."
+    }
+   ]
+  },
+  {
+   "id": "w01",
+   "file": "Wush Wush  - Tea Farm _2.jpg",
+   "name": "Tea Farm 2",
+   "zone": "a",
+   "entryU": 0.5,
+   "hotspots": [
+    {
+     "type": "link",
+     "target": "w02",
+     "u": 0.58,
+     "v": 0.56
+    },
+    {
+     "type": "link",
+     "target": "w00",
+     "u": 0.08,
+     "v": 0.56
+    }
+   ]
+  },
+  {
+   "id": "w02",
+   "file": "Wush Wush  - Tea Farm _3.jpg",
+   "name": "Tea Farm 3",
+   "zone": "a",
+   "entryU": 0.5,
+   "hotspots": [
+    {
+     "type": "link",
+     "target": "w03",
+     "u": 0.58,
+     "v": 0.56
+    },
+    {
+     "type": "link",
+     "target": "w01",
+     "u": 0.08,
+     "v": 0.56
+    }
+   ]
+  },
+  {
+   "id": "w03",
+   "file": "Wush Wush  - Tea Farm _4.jpg",
+   "name": "Tea Farm 4",
+   "zone": "a",
+   "entryU": 0.5,
+   "hotspots": [
+    {
+     "type": "link",
+     "target": "w04",
+     "u": 0.58,
+     "v": 0.56
+    },
+    {
+     "type": "link",
+     "target": "w02",
+     "u": 0.08,
+     "v": 0.56
+    }
+   ]
+  },
+  {
+   "id": "w04",
+   "file": "Wush Wush  - Tea Farm _5.jpg",
+   "name": "Tea Farm 5",
+   "zone": "b",
+   "entryU": 0.5,
+   "hotspots": [
+    {
+     "type": "link",
+     "target": "w05",
+     "u": 0.58,
+     "v": 0.56
+    },
+    {
+     "type": "link",
+     "target": "w03",
+     "u": 0.08,
+     "v": 0.56
+    }
+   ]
+  },
+  {
+   "id": "w05",
+   "file": "Wush Wush  - Tea Farm _6.jpg",
+   "name": "Tea Farm 6",
+   "zone": "b",
+   "entryU": 0.5,
+   "hotspots": [
+    {
+     "type": "link",
+     "target": "w06",
+     "u": 0.58,
+     "v": 0.56
+    },
+    {
+     "type": "link",
+     "target": "w04",
+     "u": 0.08,
+     "v": 0.56
+    }
+   ]
+  },
+  {
+   "id": "w06",
+   "file": "Wush Wush  - Tea Farm _7.jpg",
+   "name": "Tea Farm 7",
+   "zone": "b",
+   "entryU": 0.5,
+   "hotspots": [
+    {
+     "type": "link",
+     "target": "w07",
+     "u": 0.58,
+     "v": 0.56
+    },
+    {
+     "type": "link",
+     "target": "w05",
+     "u": 0.08,
+     "v": 0.56
+    }
+   ]
+  },
+  {
+   "id": "w07",
+   "file": "Wush Wush  - Tea Farm _8.jpg",
+   "name": "Tea Farm 8",
+   "zone": "b",
+   "entryU": 0.5,
+   "hotspots": [
+    {
+     "type": "link",
+     "target": "w08",
+     "u": 0.58,
+     "v": 0.56
+    },
+    {
+     "type": "link",
+     "target": "w06",
+     "u": 0.08,
+     "v": 0.56
+    }
+   ]
+  },
+  {
+   "id": "w08",
+   "file": "Wush Wush  - Tea Farm _9.jpg",
+   "name": "Tea Farm 9",
+   "zone": "c",
+   "entryU": 0.5,
+   "hotspots": [
+    {
+     "type": "link",
+     "target": "w09",
+     "u": 0.58,
+     "v": 0.56
+    },
+    {
+     "type": "link",
+     "target": "w07",
+     "u": 0.08,
+     "v": 0.56
+    }
+   ]
+  },
+  {
+   "id": "w09",
+   "file": "Wush Wush  - Tea Farm _10.jpg",
+   "name": "Tea Farm 10",
+   "zone": "c",
+   "entryU": 0.5,
+   "hotspots": [
+    {
+     "type": "link",
+     "target": "w10",
+     "u": 0.58,
+     "v": 0.56
+    },
+    {
+     "type": "link",
+     "target": "w08",
+     "u": 0.08,
+     "v": 0.56
+    }
+   ]
+  },
+  {
+   "id": "w10",
+   "file": "Wush Wush  - Tea Farm _11.jpg",
+   "name": "Tea Farm 11",
+   "zone": "c",
+   "entryU": 0.5,
+   "hotspots": [
+    {
+     "type": "link",
+     "target": "w11",
+     "u": 0.58,
+     "v": 0.56
+    },
+    {
+     "type": "link",
+     "target": "w09",
+     "u": 0.08,
+     "v": 0.56
+    }
+   ]
+  },
+  {
+   "id": "w11",
+   "file": "Wush Wush  - Tea Farm _12.jpg",
+   "name": "Tea Farm 12",
+   "zone": "c",
+   "entryU": 0.5,
+   "hotspots": [
+    {
+     "type": "link",
+     "target": "w10",
+     "u": 0.08,
+     "v": 0.56
+    }
+   ]
+  }
+ ]
+}
