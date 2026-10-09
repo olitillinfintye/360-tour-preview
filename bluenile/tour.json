@@ -1,0 +1,687 @@
+{
+ "title": "Blue Nile Resort 360 Tour",
+ "base": "bluenile/",
+ "start": "n00",
+ "menu": {
+  "node": "n00",
+  "title": "Blue Nile Resort",
+  "subtitle": "Choose an area to visit"
+ },
+ "zones": [
+  {
+   "id": "gate",
+   "name": "Gate",
+   "target": "n00",
+   "color": "#e76f51",
+   "nodes": [
+    "n00",
+    "n01",
+    "n02",
+    "n03",
+    "n04"
+   ]
+  },
+  {
+   "id": "reception",
+   "name": "Reception",
+   "target": "n05",
+   "color": "#f4a261",
+   "nodes": [
+    "n05",
+    "n06"
+   ]
+  },
+  {
+   "id": "compound",
+   "name": "Compound",
+   "target": "n07",
+   "color": "#8a81d6",
+   "nodes": [
+    "n07",
+    "n08",
+    "n09"
+   ]
+  },
+  {
+   "id": "lake",
+   "name": "Lake",
+   "target": "n10",
+   "color": "#4a90d9",
+   "nodes": [
+    "n10",
+    "n11",
+    "n12"
+   ]
+  },
+  {
+   "id": "suite",
+   "name": "Presidential Suite",
+   "target": "n13",
+   "color": "#d681be",
+   "nodes": [
+    "n13",
+    "n14",
+    "n15",
+    "n16"
+   ]
+  },
+  {
+   "id": "room1",
+   "name": "Room 1",
+   "target": "n17",
+   "color": "#56a0e6",
+   "nodes": [
+    "n17",
+    "n18",
+    "n19"
+   ]
+  },
+  {
+   "id": "room2",
+   "name": "Room 2",
+   "target": "n20",
+   "color": "#56c8e6",
+   "nodes": [
+    "n20",
+    "n21",
+    "n22",
+    "n23"
+   ]
+  },
+  {
+   "id": "room3",
+   "name": "Room 3",
+   "target": "n24",
+   "color": "#82dce6",
+   "nodes": [
+    "n24",
+    "n25"
+   ]
+  }
+ ],
+ "guided": [
+  "n00",
+  "n01",
+  "n02",
+  "n03",
+  "n04",
+  "n05",
+  "n06",
+  "n07",
+  "n08",
+  "n09",
+  "n10",
+  "n11",
+  "n12",
+  "n13",
+  "n14",
+  "n15",
+  "n16",
+  "n17",
+  "n18",
+  "n19",
+  "n20",
+  "n21",
+  "n22",
+  "n23",
+  "n24",
+  "n25"
+ ],
+ "guidedSeconds": 12,
+ "nodes": [
+  {
+   "id": "n00",
+   "file": "BLUE NILE - GATE 1.jpg",
+   "name": "Gate 1",
+   "zone": "gate",
+   "entryU": 0.5,
+   "hotspots": [
+    {
+     "type": "link",
+     "target": "n01",
+     "u": 0.58,
+     "v": 0.56
+    },
+    {
+     "type": "menu",
+     "u": 0.42,
+     "v": 0.46
+    },
+    {
+     "type": "info",
+     "u": 0.5,
+     "v": 0.46,
+     "title": "Welcome to Blue Nile Resort",
+     "text": "Explore Blue Nile Resort. Use the menu to jump to an area, or follow the arrows. This text is a placeholder."
+    },
+    {
+     "type": "image",
+     "u": 0.66,
+     "v": 0.46,
+     "title": "Blue Nile Resort Map",
+     "image": "bluenile/map.png",
+     "text": "Overview of every area in this tour."
+    }
+   ]
+  },
+  {
+   "id": "n01",
+   "file": "BLUE NILE - GATE 2.jpg",
+   "name": "Gate 2",
+   "zone": "gate",
+   "entryU": 0.5,
+   "hotspots": [
+    {
+     "type": "link",
+     "target": "n02",
+     "u": 0.58,
+     "v": 0.56
+    },
+    {
+     "type": "link",
+     "target": "n00",
+     "u": 0.08,
+     "v": 0.56
+    }
+   ]
+  },
+  {
+   "id": "n02",
+   "file": "BLUE NILE - GATE 3.jpg",
+   "name": "Gate 3",
+   "zone": "gate",
+   "entryU": 0.5,
+   "hotspots": [
+    {
+     "type": "link",
+     "target": "n03",
+     "u": 0.58,
+     "v": 0.56
+    },
+    {
+     "type": "link",
+     "target": "n01",
+     "u": 0.08,
+     "v": 0.56
+    }
+   ]
+  },
+  {
+   "id": "n03",
+   "file": "BLUE NILE - GATE 4.jpg",
+   "name": "Gate 4",
+   "zone": "gate",
+   "entryU": 0.5,
+   "hotspots": [
+    {
+     "type": "link",
+     "target": "n04",
+     "u": 0.58,
+     "v": 0.56
+    },
+    {
+     "type": "link",
+     "target": "n02",
+     "u": 0.08,
+     "v": 0.56
+    }
+   ]
+  },
+  {
+   "id": "n04",
+   "file": "BLUE NILE - GATE 5.jpg",
+   "name": "Gate 5",
+   "zone": "gate",
+   "entryU": 0.5,
+   "hotspots": [
+    {
+     "type": "link",
+     "target": "n05",
+     "u": 0.58,
+     "v": 0.56
+    },
+    {
+     "type": "link",
+     "target": "n03",
+     "u": 0.08,
+     "v": 0.56
+    }
+   ]
+  },
+  {
+   "id": "n05",
+   "file": "BLUE NILE - RECEPTION 1.jpg",
+   "name": "Reception 1",
+   "zone": "reception",
+   "entryU": 0.5,
+   "hotspots": [
+    {
+     "type": "link",
+     "target": "n06",
+     "u": 0.58,
+     "v": 0.56
+    },
+    {
+     "type": "link",
+     "target": "n04",
+     "u": 0.08,
+     "v": 0.56
+    }
+   ]
+  },
+  {
+   "id": "n06",
+   "file": "BLUE NILE - RECEPTION 2.jpg",
+   "name": "Reception 2",
+   "zone": "reception",
+   "entryU": 0.5,
+   "hotspots": [
+    {
+     "type": "link",
+     "target": "n07",
+     "u": 0.58,
+     "v": 0.56
+    },
+    {
+     "type": "link",
+     "target": "n05",
+     "u": 0.08,
+     "v": 0.56
+    }
+   ]
+  },
+  {
+   "id": "n07",
+   "file": "BLUE NILE - COMPOUND 1.jpg",
+   "name": "Compound 1",
+   "zone": "compound",
+   "entryU": 0.5,
+   "hotspots": [
+    {
+     "type": "link",
+     "target": "n08",
+     "u": 0.58,
+     "v": 0.56
+    },
+    {
+     "type": "link",
+     "target": "n06",
+     "u": 0.08,
+     "v": 0.56
+    }
+   ]
+  },
+  {
+   "id": "n08",
+   "file": "BLUE NILE - COMPOUND 2.jpg",
+   "name": "Compound 2",
+   "zone": "compound",
+   "entryU": 0.5,
+   "hotspots": [
+    {
+     "type": "link",
+     "target": "n09",
+     "u": 0.58,
+     "v": 0.56
+    },
+    {
+     "type": "link",
+     "target": "n07",
+     "u": 0.08,
+     "v": 0.56
+    }
+   ]
+  },
+  {
+   "id": "n09",
+   "file": "BLUE NILE - Room Area Compound .jpg",
+   "name": "Room Area Compound",
+   "zone": "compound",
+   "entryU": 0.5,
+   "hotspots": [
+    {
+     "type": "link",
+     "target": "n10",
+     "u": 0.58,
+     "v": 0.56
+    },
+    {
+     "type": "link",
+     "target": "n08",
+     "u": 0.08,
+     "v": 0.56
+    }
+   ]
+  },
+  {
+   "id": "n10",
+   "file": "BLUE NILE - LAKE SHORE.jpg",
+   "name": "Lake Shore",
+   "zone": "lake",
+   "entryU": 0.5,
+   "hotspots": [
+    {
+     "type": "link",
+     "target": "n11",
+     "u": 0.58,
+     "v": 0.56
+    },
+    {
+     "type": "link",
+     "target": "n09",
+     "u": 0.08,
+     "v": 0.56
+    }
+   ]
+  },
+  {
+   "id": "n11",
+   "file": "BLUE NILE - LAKE 1.jpg",
+   "name": "Lake 1",
+   "zone": "lake",
+   "entryU": 0.5,
+   "hotspots": [
+    {
+     "type": "link",
+     "target": "n12",
+     "u": 0.58,
+     "v": 0.56
+    },
+    {
+     "type": "link",
+     "target": "n10",
+     "u": 0.08,
+     "v": 0.56
+    }
+   ]
+  },
+  {
+   "id": "n12",
+   "file": "BLUE NILE - LAKE 2.jpg",
+   "name": "Lake 2",
+   "zone": "lake",
+   "entryU": 0.5,
+   "hotspots": [
+    {
+     "type": "link",
+     "target": "n13",
+     "u": 0.58,
+     "v": 0.56
+    },
+    {
+     "type": "link",
+     "target": "n11",
+     "u": 0.08,
+     "v": 0.56
+    }
+   ]
+  },
+  {
+   "id": "n13",
+   "file": "BLUE NILE - Presidential suite 1.jpg",
+   "name": "Presidential Suite 1",
+   "zone": "suite",
+   "entryU": 0.5,
+   "hotspots": [
+    {
+     "type": "link",
+     "target": "n14",
+     "u": 0.58,
+     "v": 0.56
+    },
+    {
+     "type": "link",
+     "target": "n12",
+     "u": 0.08,
+     "v": 0.56
+    }
+   ]
+  },
+  {
+   "id": "n14",
+   "file": "BLUE NILE - Presidential suite 2.jpg",
+   "name": "Presidential Suite 2",
+   "zone": "suite",
+   "entryU": 0.5,
+   "hotspots": [
+    {
+     "type": "link",
+     "target": "n15",
+     "u": 0.58,
+     "v": 0.56
+    },
+    {
+     "type": "link",
+     "target": "n13",
+     "u": 0.08,
+     "v": 0.56
+    }
+   ]
+  },
+  {
+   "id": "n15",
+   "file": "BLUE NILE - Presidential suite 3.jpg",
+   "name": "Presidential Suite 3",
+   "zone": "suite",
+   "entryU": 0.5,
+   "hotspots": [
+    {
+     "type": "link",
+     "target": "n16",
+     "u": 0.58,
+     "v": 0.56
+    },
+    {
+     "type": "link",
+     "target": "n14",
+     "u": 0.08,
+     "v": 0.56
+    }
+   ]
+  },
+  {
+   "id": "n16",
+   "file": "BLUE NILE - Presidential suite 4.jpg",
+   "name": "Presidential Suite 4",
+   "zone": "suite",
+   "entryU": 0.5,
+   "hotspots": [
+    {
+     "type": "link",
+     "target": "n17",
+     "u": 0.58,
+     "v": 0.56
+    },
+    {
+     "type": "link",
+     "target": "n15",
+     "u": 0.08,
+     "v": 0.56
+    }
+   ]
+  },
+  {
+   "id": "n17",
+   "file": "BLUE NILE - Room - 1.jpg",
+   "name": "Room 1",
+   "zone": "room1",
+   "entryU": 0.5,
+   "hotspots": [
+    {
+     "type": "link",
+     "target": "n18",
+     "u": 0.58,
+     "v": 0.56
+    },
+    {
+     "type": "link",
+     "target": "n16",
+     "u": 0.08,
+     "v": 0.56
+    }
+   ]
+  },
+  {
+   "id": "n18",
+   "file": "BLUE NILE - Room - 1- Balcony.jpg",
+   "name": "Room 1 Balcony",
+   "zone": "room1",
+   "entryU": 0.5,
+   "hotspots": [
+    {
+     "type": "link",
+     "target": "n19",
+     "u": 0.58,
+     "v": 0.56
+    },
+    {
+     "type": "link",
+     "target": "n17",
+     "u": 0.08,
+     "v": 0.56
+    }
+   ]
+  },
+  {
+   "id": "n19",
+   "file": "BLUE NILE - Room - 1- Bathroom.jpg",
+   "name": "Room 1 Bathroom",
+   "zone": "room1",
+   "entryU": 0.5,
+   "hotspots": [
+    {
+     "type": "link",
+     "target": "n20",
+     "u": 0.58,
+     "v": 0.56
+    },
+    {
+     "type": "link",
+     "target": "n18",
+     "u": 0.08,
+     "v": 0.56
+    }
+   ]
+  },
+  {
+   "id": "n20",
+   "file": "BLUE NILE - Room - 2- Leaving Room 1.jpg",
+   "name": "Room 2 Living Room 1",
+   "zone": "room2",
+   "entryU": 0.5,
+   "hotspots": [
+    {
+     "type": "link",
+     "target": "n21",
+     "u": 0.58,
+     "v": 0.56
+    },
+    {
+     "type": "link",
+     "target": "n19",
+     "u": 0.08,
+     "v": 0.56
+    }
+   ]
+  },
+  {
+   "id": "n21",
+   "file": "BLUE NILE - Room - 2- Leaving Room 2.jpg",
+   "name": "Room 2 Living Room 2",
+   "zone": "room2",
+   "entryU": 0.5,
+   "hotspots": [
+    {
+     "type": "link",
+     "target": "n22",
+     "u": 0.58,
+     "v": 0.56
+    },
+    {
+     "type": "link",
+     "target": "n20",
+     "u": 0.08,
+     "v": 0.56
+    }
+   ]
+  },
+  {
+   "id": "n22",
+   "file": "BLUE NILE - Room - 2- Balcony.jpg",
+   "name": "Room 2 Balcony",
+   "zone": "room2",
+   "entryU": 0.5,
+   "hotspots": [
+    {
+     "type": "link",
+     "target": "n23",
+     "u": 0.58,
+     "v": 0.56
+    },
+    {
+     "type": "link",
+     "target": "n21",
+     "u": 0.08,
+     "v": 0.56
+    }
+   ]
+  },
+  {
+   "id": "n23",
+   "file": "BLUE NILE - Room - 2- Bath Room.jpg",
+   "name": "Room 2 Bathroom",
+   "zone": "room2",
+   "entryU": 0.5,
+   "hotspots": [
+    {
+     "type": "link",
+     "target": "n24",
+     "u": 0.58,
+     "v": 0.56
+    },
+    {
+     "type": "link",
+     "target": "n22",
+     "u": 0.08,
+     "v": 0.56
+    }
+   ]
+  },
+  {
+   "id": "n24",
+   "file": "BLUE NILE - Room - 3- Bedroom.jpg",
+   "name": "Room 3 Bedroom",
+   "zone": "room3",
+   "entryU": 0.5,
+   "hotspots": [
+    {
+     "type": "link",
+     "target": "n25",
+     "u": 0.58,
+     "v": 0.56
+    },
+    {
+     "type": "link",
+     "target": "n23",
+     "u": 0.08,
+     "v": 0.56
+    }
+   ]
+  },
+  {
+   "id": "n25",
+   "file": "BLUE NILE - Room - 3- Leaving Room.jpg",
+   "name": "Room 3 Living Room",
+   "zone": "room3",
+   "entryU": 0.5,
+   "hotspots": [
+    {
+     "type": "link",
+     "target": "n24",
+     "u": 0.08,
+     "v": 0.56
+    }
+   ]
+  }
+ ]
+}

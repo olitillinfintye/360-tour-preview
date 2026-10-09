@@ -19,7 +19,7 @@ class Handler(http.server.SimpleHTTPRequestHandler):
             self.send_error(404)
             return
         key = dict(q.split("=", 1) for q in qs.split("&") if "=" in q).get("tour", "dembi")
-        if key not in ("dembi", "wushwush", "bebeka"):
+        if key not in ("dembi", "wushwush", "bebeka", "bluenile", "jimma"):
             self.send_error(400, "unknown tour")
             return
         out = "tour.edited.json" if key == "dembi" else os.path.join(key, "tour.edited.json")

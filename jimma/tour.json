@@ -1,0 +1,649 @@
+{
+ "title": "Jimma Palace 360 Tour",
+ "base": "jimma/",
+ "start": "j00",
+ "menu": {
+  "node": "j00",
+  "title": "Jimma Palace",
+  "subtitle": "Choose an area to visit"
+ },
+ "zones": [
+  {
+   "id": "gate",
+   "name": "Gate",
+   "target": "j00",
+   "color": "#e76f51",
+   "nodes": [
+    "j00",
+    "j01",
+    "j02",
+    "j03"
+   ]
+  },
+  {
+   "id": "compound",
+   "name": "Compound",
+   "target": "j04",
+   "color": "#8a81d6",
+   "nodes": [
+    "j04",
+    "j05"
+   ]
+  },
+  {
+   "id": "backyard",
+   "name": "Backyard",
+   "target": "j06",
+   "color": "#6ab04c",
+   "nodes": [
+    "j06",
+    "j07"
+   ]
+  },
+  {
+   "id": "hall",
+   "name": "Hall",
+   "target": "j08",
+   "color": "#e9c46a",
+   "nodes": [
+    "j08",
+    "j09",
+    "j10",
+    "j11"
+   ]
+  },
+  {
+   "id": "salon",
+   "name": "Salon",
+   "target": "j12",
+   "color": "#f4a261",
+   "nodes": [
+    "j12",
+    "j13"
+   ]
+  },
+  {
+   "id": "office",
+   "name": "Office & Corridor",
+   "target": "j14",
+   "color": "#2a9d8f",
+   "nodes": [
+    "j14",
+    "j15"
+   ]
+  },
+  {
+   "id": "master",
+   "name": "Master Bedroom",
+   "target": "j16",
+   "color": "#c0617a",
+   "nodes": [
+    "j16",
+    "j17",
+    "j18",
+    "j19"
+   ]
+  },
+  {
+   "id": "bed2",
+   "name": "2nd Bedroom",
+   "target": "j20",
+   "color": "#56a0e6",
+   "nodes": [
+    "j20",
+    "j21"
+   ]
+  },
+  {
+   "id": "bed3",
+   "name": "3rd Bedroom",
+   "target": "j22",
+   "color": "#82dce6",
+   "nodes": [
+    "j22",
+    "j23"
+   ]
+  }
+ ],
+ "guided": [
+  "j00",
+  "j01",
+  "j02",
+  "j03",
+  "j04",
+  "j05",
+  "j06",
+  "j07",
+  "j08",
+  "j09",
+  "j10",
+  "j11",
+  "j12",
+  "j13",
+  "j14",
+  "j15",
+  "j16",
+  "j17",
+  "j18",
+  "j19",
+  "j20",
+  "j21",
+  "j22",
+  "j23"
+ ],
+ "guidedSeconds": 12,
+ "nodes": [
+  {
+   "id": "j00",
+   "file": "Jimma Palace - Gate 1.jpg",
+   "name": "Gate 1",
+   "zone": "gate",
+   "entryU": 0.5,
+   "hotspots": [
+    {
+     "type": "link",
+     "target": "j01",
+     "u": 0.58,
+     "v": 0.56
+    },
+    {
+     "type": "menu",
+     "u": 0.42,
+     "v": 0.46
+    },
+    {
+     "type": "info",
+     "u": 0.5,
+     "v": 0.46,
+     "title": "Welcome to Jimma Palace",
+     "text": "Explore Jimma Palace. Use the menu to jump to an area, or follow the arrows. This text is a placeholder."
+    },
+    {
+     "type": "image",
+     "u": 0.66,
+     "v": 0.46,
+     "title": "Jimma Palace Map",
+     "image": "jimma/map.png",
+     "text": "Overview of every area in this tour."
+    }
+   ]
+  },
+  {
+   "id": "j01",
+   "file": "Jimma Palace - Gate 2.jpg",
+   "name": "Gate 2",
+   "zone": "gate",
+   "entryU": 0.5,
+   "hotspots": [
+    {
+     "type": "link",
+     "target": "j02",
+     "u": 0.58,
+     "v": 0.56
+    },
+    {
+     "type": "link",
+     "target": "j00",
+     "u": 0.08,
+     "v": 0.56
+    }
+   ]
+  },
+  {
+   "id": "j02",
+   "file": "Jimma Palace - 2nd Gate  - 1.jpg",
+   "name": "2nd Gate 1",
+   "zone": "gate",
+   "entryU": 0.5,
+   "hotspots": [
+    {
+     "type": "link",
+     "target": "j03",
+     "u": 0.58,
+     "v": 0.56
+    },
+    {
+     "type": "link",
+     "target": "j01",
+     "u": 0.08,
+     "v": 0.56
+    }
+   ]
+  },
+  {
+   "id": "j03",
+   "file": "Jimma Palace - 2nd Gate  - 2.jpg",
+   "name": "2nd Gate 2",
+   "zone": "gate",
+   "entryU": 0.5,
+   "hotspots": [
+    {
+     "type": "link",
+     "target": "j04",
+     "u": 0.58,
+     "v": 0.56
+    },
+    {
+     "type": "link",
+     "target": "j02",
+     "u": 0.08,
+     "v": 0.56
+    }
+   ]
+  },
+  {
+   "id": "j04",
+   "file": "Jimma Palace - Compound.jpg",
+   "name": "Compound 1",
+   "zone": "compound",
+   "entryU": 0.5,
+   "hotspots": [
+    {
+     "type": "link",
+     "target": "j05",
+     "u": 0.58,
+     "v": 0.56
+    },
+    {
+     "type": "link",
+     "target": "j03",
+     "u": 0.08,
+     "v": 0.56
+    }
+   ]
+  },
+  {
+   "id": "j05",
+   "file": "Jimma Palace - Compund 2.jpg",
+   "name": "Compound 2",
+   "zone": "compound",
+   "entryU": 0.5,
+   "hotspots": [
+    {
+     "type": "link",
+     "target": "j06",
+     "u": 0.58,
+     "v": 0.56
+    },
+    {
+     "type": "link",
+     "target": "j04",
+     "u": 0.08,
+     "v": 0.56
+    }
+   ]
+  },
+  {
+   "id": "j06",
+   "file": "Jimma Palace - Backyard.jpg",
+   "name": "Backyard 1",
+   "zone": "backyard",
+   "entryU": 0.5,
+   "hotspots": [
+    {
+     "type": "link",
+     "target": "j07",
+     "u": 0.58,
+     "v": 0.56
+    },
+    {
+     "type": "link",
+     "target": "j05",
+     "u": 0.08,
+     "v": 0.56
+    }
+   ]
+  },
+  {
+   "id": "j07",
+   "file": "Jimma Palace - Backyard 2.jpg",
+   "name": "Backyard 2",
+   "zone": "backyard",
+   "entryU": 0.5,
+   "hotspots": [
+    {
+     "type": "link",
+     "target": "j08",
+     "u": 0.58,
+     "v": 0.56
+    },
+    {
+     "type": "link",
+     "target": "j06",
+     "u": 0.08,
+     "v": 0.56
+    }
+   ]
+  },
+  {
+   "id": "j08",
+   "file": "Jimma Palace - Hall 1.jpg",
+   "name": "Hall 1",
+   "zone": "hall",
+   "entryU": 0.5,
+   "hotspots": [
+    {
+     "type": "link",
+     "target": "j09",
+     "u": 0.58,
+     "v": 0.56
+    },
+    {
+     "type": "link",
+     "target": "j07",
+     "u": 0.08,
+     "v": 0.56
+    }
+   ]
+  },
+  {
+   "id": "j09",
+   "file": "Jimma Palace - Hall 2.jpg",
+   "name": "Hall 2",
+   "zone": "hall",
+   "entryU": 0.5,
+   "hotspots": [
+    {
+     "type": "link",
+     "target": "j10",
+     "u": 0.58,
+     "v": 0.56
+    },
+    {
+     "type": "link",
+     "target": "j08",
+     "u": 0.08,
+     "v": 0.56
+    }
+   ]
+  },
+  {
+   "id": "j10",
+   "file": "Jimma Palace - Hall 3.jpg",
+   "name": "Hall 3",
+   "zone": "hall",
+   "entryU": 0.5,
+   "hotspots": [
+    {
+     "type": "link",
+     "target": "j11",
+     "u": 0.58,
+     "v": 0.56
+    },
+    {
+     "type": "link",
+     "target": "j09",
+     "u": 0.08,
+     "v": 0.56
+    }
+   ]
+  },
+  {
+   "id": "j11",
+   "file": "Jimma Palace - Hall 4.jpg",
+   "name": "Hall 4",
+   "zone": "hall",
+   "entryU": 0.5,
+   "hotspots": [
+    {
+     "type": "link",
+     "target": "j12",
+     "u": 0.58,
+     "v": 0.56
+    },
+    {
+     "type": "link",
+     "target": "j10",
+     "u": 0.08,
+     "v": 0.56
+    }
+   ]
+  },
+  {
+   "id": "j12",
+   "file": "Jimma - Palace salon.jpg",
+   "name": "Salon",
+   "zone": "salon",
+   "entryU": 0.5,
+   "hotspots": [
+    {
+     "type": "link",
+     "target": "j13",
+     "u": 0.58,
+     "v": 0.56
+    },
+    {
+     "type": "link",
+     "target": "j11",
+     "u": 0.08,
+     "v": 0.56
+    }
+   ]
+  },
+  {
+   "id": "j13",
+   "file": "Jimma - Palace salon - Left side.jpg",
+   "name": "Salon Left Side",
+   "zone": "salon",
+   "entryU": 0.5,
+   "hotspots": [
+    {
+     "type": "link",
+     "target": "j14",
+     "u": 0.58,
+     "v": 0.56
+    },
+    {
+     "type": "link",
+     "target": "j12",
+     "u": 0.08,
+     "v": 0.56
+    }
+   ]
+  },
+  {
+   "id": "j14",
+   "file": "Jimma - Palace office.jpg",
+   "name": "Office",
+   "zone": "office",
+   "entryU": 0.5,
+   "hotspots": [
+    {
+     "type": "link",
+     "target": "j15",
+     "u": 0.58,
+     "v": 0.56
+    },
+    {
+     "type": "link",
+     "target": "j13",
+     "u": 0.08,
+     "v": 0.56
+    }
+   ]
+  },
+  {
+   "id": "j15",
+   "file": "Jimma - Palace - left side corridor .jpg",
+   "name": "Left Side Corridor",
+   "zone": "office",
+   "entryU": 0.5,
+   "hotspots": [
+    {
+     "type": "link",
+     "target": "j16",
+     "u": 0.58,
+     "v": 0.56
+    },
+    {
+     "type": "link",
+     "target": "j14",
+     "u": 0.08,
+     "v": 0.56
+    }
+   ]
+  },
+  {
+   "id": "j16",
+   "file": "Jimma Palace - Master Bedroom corridor.jpg",
+   "name": "Master Bedroom Corridor",
+   "zone": "master",
+   "entryU": 0.5,
+   "hotspots": [
+    {
+     "type": "link",
+     "target": "j17",
+     "u": 0.58,
+     "v": 0.56
+    },
+    {
+     "type": "link",
+     "target": "j15",
+     "u": 0.08,
+     "v": 0.56
+    }
+   ]
+  },
+  {
+   "id": "j17",
+   "file": "Jimma Palace - Master Bedroom.jpg",
+   "name": "Master Bedroom",
+   "zone": "master",
+   "entryU": 0.5,
+   "hotspots": [
+    {
+     "type": "link",
+     "target": "j18",
+     "u": 0.58,
+     "v": 0.56
+    },
+    {
+     "type": "link",
+     "target": "j16",
+     "u": 0.08,
+     "v": 0.56
+    }
+   ]
+  },
+  {
+   "id": "j18",
+   "file": "Jimma Palace - Master Bedroom - Bathroom.jpg",
+   "name": "Master Bathroom",
+   "zone": "master",
+   "entryU": 0.5,
+   "hotspots": [
+    {
+     "type": "link",
+     "target": "j19",
+     "u": 0.58,
+     "v": 0.56
+    },
+    {
+     "type": "link",
+     "target": "j17",
+     "u": 0.08,
+     "v": 0.56
+    }
+   ]
+  },
+  {
+   "id": "j19",
+   "file": "Jimma Palace - wardrobe room.jpg",
+   "name": "Wardrobe Room",
+   "zone": "master",
+   "entryU": 0.5,
+   "hotspots": [
+    {
+     "type": "link",
+     "target": "j20",
+     "u": 0.58,
+     "v": 0.56
+    },
+    {
+     "type": "link",
+     "target": "j18",
+     "u": 0.08,
+     "v": 0.56
+    }
+   ]
+  },
+  {
+   "id": "j20",
+   "file": "Jimma Palace - 2nd Bedroom .jpg",
+   "name": "2nd Bedroom",
+   "zone": "bed2",
+   "entryU": 0.5,
+   "hotspots": [
+    {
+     "type": "link",
+     "target": "j21",
+     "u": 0.58,
+     "v": 0.56
+    },
+    {
+     "type": "link",
+     "target": "j19",
+     "u": 0.08,
+     "v": 0.56
+    }
+   ]
+  },
+  {
+   "id": "j21",
+   "file": "Jimma Palace - 2nd Bedroom - Bathroom.jpg",
+   "name": "2nd Bedroom Bathroom",
+   "zone": "bed2",
+   "entryU": 0.5,
+   "hotspots": [
+    {
+     "type": "link",
+     "target": "j22",
+     "u": 0.58,
+     "v": 0.56
+    },
+    {
+     "type": "link",
+     "target": "j20",
+     "u": 0.08,
+     "v": 0.56
+    }
+   ]
+  },
+  {
+   "id": "j22",
+   "file": "Jimma Palace - 3rd Bedroom.jpg",
+   "name": "3rd Bedroom",
+   "zone": "bed3",
+   "entryU": 0.5,
+   "hotspots": [
+    {
+     "type": "link",
+     "target": "j23",
+     "u": 0.58,
+     "v": 0.56
+    },
+    {
+     "type": "link",
+     "target": "j21",
+     "u": 0.08,
+     "v": 0.56
+    }
+   ]
+  },
+  {
+   "id": "j23",
+   "file": "Jimma Palace - 3rd Bedroom - Bathroom.jpg",
+   "name": "3rd Bedroom Bathroom",
+   "zone": "bed3",
+   "entryU": 0.5,
+   "hotspots": [
+    {
+     "type": "link",
+     "target": "j22",
+     "u": 0.08,
+     "v": 0.56
+    }
+   ]
+  }
+ ]
+}

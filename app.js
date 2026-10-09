@@ -1,6 +1,6 @@
 (async function () {
   const $ = s => document.querySelector(s);
-  const TOURS = { dembi: 'tour.json', wushwush: 'wushwush/tour.json', bebeka: 'bebeka/tour.json' };
+  const TOURS = { dembi: 'tour.json', wushwush: 'wushwush/tour.json', bebeka: 'bebeka/tour.json', bluenile: 'bluenile/tour.json', jimma: 'jimma/tour.json' };
   let KEY = new URLSearchParams(location.search).get('tour');
   if (!TOURS[KEY]) KEY = 'dembi';
   const LS_KEY = KEY === 'dembi' ? 'dembiTour.v2' : 'tour.' + KEY + '.v1';
@@ -14,6 +14,7 @@
   const base = await (await fetch(TOURS[KEY], { cache: 'no-store' })).json();
   let tour = base, edited = false;
   try { const s = localStorage.getItem(LS_KEY); if (s) { tour = JSON.parse(s); edited = true; } } catch (e) { }
+  tour.settings = Object.assign({ hfov: 100, rotSpeed: 2.5 }, tour.settings);
   const BASE = tour.base || '';
   document.title = tour.title + ' (Preview)';
   $('#brandName').textContent = tour.title;
@@ -48,7 +49,7 @@
     h._div = div;
   }
   const cfg = {
-    default: { firstScene: tour.start, sceneFadeDuration: 800, autoLoad: true, hfov: 100, compass: false, showZoomCtrl: true, showFullscreenCtrl: true, friction: 0.25 },
+    default: { firstScene: tour.start, sceneFadeDuration: 800, autoLoad: true, hfov: tour.settings.hfov, compass: false, showZoomCtrl: true, showFullscreenCtrl: true, friction: 0.25 },
     scenes: {},
   };
   tour.nodes.forEach(n => cfg.scenes[n.id] = { type: 'equirectangular', panorama: BASE + 'panos/' + n.id + '.jpg', pitch: 0, yaw: uToYaw(n.entryU), hotSpots: n.hotspots.map(makeHs) });
@@ -65,11 +66,14 @@
     closePopup();
     cfg.scenes[id].hotSpots = n.hotspots.map(makeHs);
     cfg.scenes[id].yaw = uToYaw(n.entryU);
-    if (cur() === id) { rebuild(); viewer.lookAt(0, uToYaw(n.entryU), 100, 700); return; }
-    viewer.loadScene(id, 0, uToYaw(n.entryU), 100);
+    if (cur() === id) { rebuild(); viewer.lookAt(0, uToYaw(n.entryU), tour.settings.hfov, 700); return; }
+    viewer.loadScene(id, 0, uToYaw(n.entryU), tour.settings.hfov);
   }
   viewer.on('scenechange', id => { selected = null; updateHud(id); });
-  viewer.on('load', () => { updateHud(cur()); if (editing) renderEdit(); });
+  let pendingView = null;
+  try { const v = sessionStorage.getItem('importView.' + KEY); if (v) { pendingView = JSON.parse(v); sessionStorage.removeItem('importView.' + KEY); } } catch (e) { }
+  viewer.on('load', () => {
+    if (pendingView) { const v = pendingView; pendingView = null; if (v.scene && v.scene !== cur() && byId[v.scene]) { viewer.loadScene(v.scene, v.pitch, v.yaw, v.hfov); return; } viewer.lookAt(v.pitch, v.yaw, v.hfov, 0); } updateHud(cur()); if (editing) renderEdit(); });
 
   function onHsClick(e, h) {
     e.stopPropagation();
@@ -102,7 +106,7 @@
   function startGuided() {
     setEdit(false);
     guided = { i: 0, t: 0, paused: false, last: performance.now() };
-    go(tour.guided[0]); viewer.startAutoRotate(-2.5);
+    go(tour.guided[0]); viewer.startAutoRotate(-tour.settings.rotSpeed);
     $('#guide').classList.add('on'); $('#bGuide').classList.add('on'); tickGuided();
   }
   function stopGuided() {
@@ -111,7 +115,7 @@
   }
   function nextGuided() {
     guided.i = (guided.i + 1) % tour.guided.length; guided.t = 0;
-    go(tour.guided[guided.i]); viewer.startAutoRotate(-2.5);
+    go(tour.guided[guided.i]); viewer.startAutoRotate(-tour.settings.rotSpeed);
   }
   function tickGuided() {
     if (!guided) return;
@@ -126,7 +130,7 @@
   $('#bGuide').onclick = () => guided ? stopGuided() : startGuided();
   $('#gStop').onclick = stopGuided;
   $('#gNext').onclick = () => guided && nextGuided();
-  $('#gPause').onclick = () => { if (!guided) return; guided.paused = !guided.paused; $('#gPause').textContent = guided.paused ? '▶' : '❚❚'; guided.paused ? viewer.stopAutoRotate() : viewer.startAutoRotate(-2.5); };
+  $('#gPause').onclick = () => { if (!guided) return; guided.paused = !guided.paused; $('#gPause').textContent = guided.paused ? '▶' : '❚❚'; guided.paused ? viewer.stopAutoRotate() : viewer.startAutoRotate(-tour.settings.rotSpeed); };
 
   // ---------- edit mode ----------
   function setEdit(on) {
@@ -206,6 +210,38 @@
     const a = document.createElement('a');
     a.href = URL.createObjectURL(new Blob([JSON.stringify(exportTour(), null, 1)], { type: 'application/json' }));
     a.download = KEY === 'dembi' ? 'tour.json' : 'tour.' + KEY + '.json'; a.click();
+  };
+  // settings inputs
+  $('#sSecs').value = tour.guidedSeconds || 12; $('#sRot').value = tour.settings.rotSpeed; $('#sFov').value = tour.settings.hfov;
+  $('#sSecs').onchange = e => { tour.guidedSeconds = Math.max(3, +e.target.value || 12); persist(); };
+  $('#sRot').onchange = e => { tour.settings.rotSpeed = +e.target.value || 0; persist(); if (guided && !guided.paused) viewer.startAutoRotate(-tour.settings.rotSpeed); };
+  $('#sFov').onchange = e => { tour.settings.hfov = Math.min(120, Math.max(50, +e.target.value || 100)); persist(); viewer.setHfov(tour.settings.hfov, 300); };
+
+  // scene export / import (tour data + settings + current view)
+  $('#eExp').onclick = () => {
+    const pkg = { format: 'tour-scene', version: 1, tour: KEY, exportedAt: new Date().toISOString(),
+      view: { scene: cur(), yaw: viewer.getYaw(), pitch: viewer.getPitch(), hfov: viewer.getHfov() }, data: exportTour() };
+    const a = document.createElement('a');
+    a.href = URL.createObjectURL(new Blob([JSON.stringify(pkg, null, 1)], { type: 'application/json' }));
+    a.download = KEY + '-scene.json'; a.click(); toast('Scene exported');
+  };
+  $('#eImp').onclick = () => $('#eFile').click();
+  $('#eFile').onchange = async e => {
+    const f = e.target.files[0]; e.target.value = ''; if (!f) return;
+    try {
+      const pkg = JSON.parse(await f.text());
+      if (pkg.format !== 'tour-scene' || !pkg.data) throw new Error('not a scene export file');
+      if (pkg.tour !== KEY) throw new Error('this file is for tour "' + pkg.tour + '", not "' + KEY + '"');
+      const d = pkg.data;
+      if (!Array.isArray(d.nodes) || !Array.isArray(d.zones) || !d.start) throw new Error('tour data is incomplete');
+      const ids = new Set(d.nodes.map(n => n.id));
+      if (!d.nodes.every(n => ids.has(n.id) && Array.isArray(n.hotspots))) throw new Error('invalid locations');
+      if (!ids.has(d.start)) throw new Error('start location is missing');
+      if (!confirm('Replace the current edits with "' + f.name + '"?')) return;
+      localStorage.setItem(LS_KEY, JSON.stringify(d));
+      if (pkg.view) sessionStorage.setItem('importView.' + KEY, JSON.stringify(pkg.view));
+      location.reload();
+    } catch (err) { toast('Import failed: ' + err.message); }
   };
   $('#eReset').onclick = () => { if (!confirm('Discard all hotspot edits?')) return; localStorage.removeItem(LS_KEY); location.reload(); };
 

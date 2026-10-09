@@ -15,7 +15,7 @@ a.card img{width:100%;aspect-ratio:2/1;object-fit:cover;display:block}
 <h1>360 VR Tours</h1><div class="sub">Preview: pick a tour. Each has its own menu, guided tour and editor.</div>
 <div class="grid" id="g"></div>
 <script>
-const T=[['dembi','tour.json','Dembi Resort',''],['wushwush','wushwush/tour.json','Wush Wush Tea Farm','wushwush/'],['bebeka','bebeka/tour.json','Bebeka Coffee Farm','bebeka/']];
+const T=[['dembi','tour.json','Dembi Resort',''],['wushwush','wushwush/tour.json','Wush Wush Tea Farm','wushwush/'],['bebeka','bebeka/tour.json','Bebeka Coffee Farm','bebeka/'],['bluenile','bluenile/tour.json','Blue Nile Resort','bluenile/'],['jimma','jimma/tour.json','Jimma Palace','jimma/']];
 T.forEach(async([k,f,n,b])=>{const t=await (await fetch(f,{cache:'no-store'})).json();
  const a=document.createElement('a');a.className='card';a.href='index.html?tour='+k;
  a.innerHTML=`<img src="${b}thumbs/${t.start}.jpg" alt=""><div><b>${n}</b><span>${t.nodes.length} locations · ${t.zones.length} menu areas</span></div>`;
